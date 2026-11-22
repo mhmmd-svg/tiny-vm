@@ -166,3 +166,6 @@ for (const id of readdirSync(I).sort()) {
   writeFileSync(join(O, id, 'stdout.bin'), r.out);
   writeFileSync(join(O, id, 'exit.txt'), `${r.code}\n`);
 }
+
+// Note: exit codes mirror the reference VM's trap codes (0 = halt, 2-11 = traps);
+// the driver above writes one stdout.bin + exit.txt per instance.
